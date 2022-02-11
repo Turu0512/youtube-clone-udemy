@@ -1,9 +1,25 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import Style from "./Header.module.scss";
 
 const Header = () => {
-  return <div>Header</div>;
+  return (
+    <div className={Style.header}>
+      <div className={Style.item}>
+        <Link to="/">VideoTube</Link>;
+      </div>
+      <div className={Style.item}>
+        <form>
+          <input type="text" placeholder="検索"></input>
+          <button type="submit">
+            <FontAwesomeIcon icon={faSearch} />
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default Header;
